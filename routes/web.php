@@ -89,5 +89,32 @@ Route::group(['middleware'=>'auth'], function(){
         Route::post('/update/{id}', 'Backend\CategoryController@update')->name('categories.update');
         Route::post('/delete', 'Backend\CategoryController@delete')->name('categories.delete');
     });
+
+    Route::prefix('brands')->group(function(){
+        Route::get('/view', 'Backend\BrandController@view')->name('brands.view');
+        Route::get('/add', 'Backend\BrandController@add')->name('brands.add');
+        Route::post('/store', 'Backend\BrandController@store')->name('brands.store');
+        Route::get('/edit/{id}', 'Backend\BrandController@edit')->name('brands.edit');
+        Route::post('/update/{id}', 'Backend\BrandController@update')->name('brands.update');
+        Route::post('/delete', 'Backend\BrandController@delete')->name('brands.delete');
+    });
+
+    Route::prefix('colors')->group(function(){
+        Route::get('/view', 'Backend\ColorController@view')->name('colors.view');
+        Route::get('/add', 'Backend\ColorController@add')->name('colors.add');
+        Route::post('/store', 'Backend\ColorController@store')->name('colors.store');
+        Route::get('/edit/{id}', 'Backend\ColorController@edit')->name('colors.edit');
+        Route::post('/update/{id}', 'Backend\ColorController@update')->name('colors.update');
+        Route::post('/delete', 'Backend\ColorController@delete')->name('colors.delete');
+    });
+
+    Route::prefix('sizes')->group(function(){
+        Route::get('/view', 'Backend\SizeController@view')->name('sizes.view');
+        Route::get('/add', 'Backend\SizeController@add')->name('sizes.add');
+        Route::post('/store', 'Backend\SizeController@store')->name('sizes.store');
+        Route::get('/edit/{id}', 'Backend\SizeController@edit')->name('sizes.edit');
+        Route::post('/update/{id}', 'Backend\SizeController@update')->name('sizes.update');
+        Route::post('/delete', 'Backend\SizeController@delete')->name('sizes.delete');
+    });
 });
 

@@ -166,6 +166,57 @@
               </li>
             </ul>
           </li>
+          <li class="nav-item {{($prefix == '/brands')? 'menu-open':''}}">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fa fa-info-circle"></i>
+              <p>
+                Manage Brand
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{route('brands.view')}}" class="nav-link {{($route == 'brands.view')? 'active':''}}">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>View Brand</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item {{($prefix == '/colors')? 'menu-open':''}}">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fa fa-info-circle"></i>
+              <p>
+                Manage Color
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{route('colors.view')}}" class="nav-link {{($route == 'colors.view')? 'active':''}}">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>View Color</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item {{($prefix == '/sizes')? 'menu-open':''}}">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fa fa-info-circle"></i>
+              <p>
+                Manage Size
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{route('sizes.view')}}" class="nav-link {{($route == 'sizes.view')? 'active':''}}">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>View Size</p>
+                </a>
+              </li>
+            </ul>
+          </li>
         </ul>
       </nav>
       <!-- /.sidebar-menu -->

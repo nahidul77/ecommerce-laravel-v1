@@ -5,12 +5,12 @@
         <div class="container-fluid">
           <div class="row mb-2">
             <div class="col-sm-6">
-              <h1 class="m-0">Manage category</h1>
+              <h1 class="m-0">Manage color</h1>
             </div><!-- /.col -->
             <div class="col-sm-6">
               <ol class="breadcrumb float-sm-right">
                 <li class="breadcrumb-item"><a href="{{route('home')}}">Home</a></li>
-                <li class="breadcrumb-item active">category</li>
+                <li class="breadcrumb-item active">color</li>
               </ol>
             </div><!-- /.col -->
           </div><!-- /.row -->
@@ -28,8 +28,8 @@
               <div class="card">
                 <div class="card-header">
                   <h3>
-                      category List
-                     <a class="btn btn-success btn-sm float-right" href="{{route('categories.add')}}"><i class="fa fa-plus-circle"></i> Add category</a>  
+                      color List
+                     <a class="btn btn-success btn-sm float-right" href="{{route('colors.add')}}"><i class="fa fa-plus-circle"></i> Add color</a>  
                   </h3>
                 </div><!-- /.card-header -->
                 <div class="card-body">
@@ -37,18 +37,18 @@
                         <thead>
                         <tr>
                           <th width="6%">SL.</th>
-                          <th>Category Name</th>
+                          <th>Color Name</th>
                           <th width="12%">Action</th>
                         </tr>
                         </thead>
                         <tbody>
-                        @foreach($categories as $key => $category)
-                            <tr class="{{$category->id}}">
+                        @foreach($colors as $key => $color)
+                            <tr class="{{$color->id}}">
                                 <td>{{$key+1}}</td>
-                                <td>{{$category->name}}</td>
+                                <td>{{$color->name}}</td>
                                 <td>
-                                    <a title="Edit" class="btn btn-primary btn-sm" href="{{route('categories.edit', $category->id)}}"><i class="fa fa-edit"></i></a>
-                                    <a id="delete" title="Delete" data-token="{{csrf_token()}}" data-id="{{$category->id}}" class="btn btn-danger btn-sm" href="{{route('categories.delete', $category->id)}}"><i class="fa fa-trash"></i></a>
+                                    <a title="Edit" class="btn btn-primary btn-sm" href="{{route('colors.edit', $color->id)}}"><i class="fa fa-edit"></i></a>
+                                    <a id="delete" title="Delete" data-token="{{csrf_token()}}" data-id="{{$color->id}}" class="btn btn-danger btn-sm" href="{{route('colors.delete', $color->id)}}"><i class="fa fa-trash"></i></a>
                                 </td>
                             </tr>
                         @endforeach
@@ -56,7 +56,7 @@
                         <tfoot>
                         <tr>
                           <th>SL.</th>
-                          <th>Category Name</th>
+                          <th>Color Name</th>
                           <th>Action</th>
                         </tr>
                         </tfoot>
