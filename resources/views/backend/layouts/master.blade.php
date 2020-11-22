@@ -32,6 +32,9 @@
   {{-- Sweet alert --}}
   <link rel="stylesheet" href="{{asset('/')}}backend/sweetalert/sweetalert.css">
   <script src="{{asset('/')}}backend/sweetalert/sweetalert.js"></script>
+    <!-- Select2 -->
+    <link rel="stylesheet" href="{{asset('/')}}backend/plugins/select2/css/select2.min.css">
+    <link rel="stylesheet" href="{{asset('/')}}backend/plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css">
   <style>
     .notifyjs-corner{
       z-index: 10000 !important;
@@ -173,6 +176,8 @@
 <!-- jquery-validation -->
 <script src="{{asset('/')}}backend/plugins/jquery-validation/jquery.validate.min.js"></script>
 <script src="{{asset('/')}}backend/plugins/jquery-validation/additional-methods.min.js"></script>
+<!-- Select2 -->
+<script src="{{asset('/')}}backend/plugins/select2/js/select2.full.min.js"></script>
 <script>
   $(function () {
     $("#example1").DataTable({
@@ -269,6 +274,11 @@
       reader.readAsDataURL(e.target.files['0']);
     });
   });
+</script>
+<script>
+  $(function(){
+    $('.select2').select2();
+  })
 </script>
 </body>
 </html>

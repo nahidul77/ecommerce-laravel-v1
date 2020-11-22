@@ -217,6 +217,23 @@
               </li>
             </ul>
           </li>
+          <li class="nav-item {{($prefix == '/products')? 'menu-open':''}}">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fa fa-info-circle"></i>
+              <p>
+                Manage Product
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{route('products.view')}}" class="nav-link {{($route == 'products.view')? 'active':''}}">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>View Product</p>
+                </a>
+              </li>
+            </ul>
+          </li>
         </ul>
       </nav>
       <!-- /.sidebar-menu -->

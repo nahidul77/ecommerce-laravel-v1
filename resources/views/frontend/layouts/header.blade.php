@@ -30,7 +30,7 @@
             <nav class="limiter-menu-desktop container">
                 
                 <!-- Logo desktop -->		
-                <a href="index.html" class="logo">
+                <a href="{{url('')}}" class="logo">
                     <img src="{{asset('/frontend/')}}/images/logo/logo.png" alt="IMG-LOGO">
                 </a>
 
