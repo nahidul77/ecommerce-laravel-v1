@@ -44,7 +44,7 @@
                           <select class="custom-select form-control-border" name="category_id" id="category_id">
                             <option>Select Category</option>
                             @foreach ($categories as $category)
-                              <option value="{{$category->id}}">{{$category->name}}</option>  
+                              <option value="{{$category->id}}" {{(@$editData->category_id == $category->id)?'Selected':''}}>{{$category->name}}</option>  
                             @endforeach
                           </select>
                           <font style="color: red">{{($errors->has('category_id'))?($errors->first('category_id')):''}}</font>
@@ -54,7 +54,7 @@
                           <select class="custom-select form-control-border" name="brand_id" id="brand_id">
                             <option>Select Brand</option>
                             @foreach ($brands as $brand)
-                              <option value="{{$brand->id}}">{{$brand->name}}</option>  
+                              <option value="{{$brand->id}}" {{(@$editData->brand_id == $brand->id)?'selected':''}}>{{$brand->name}}</option>  
                             @endforeach
                           </select>
                           <font style="color: red">{{($errors->has('brand_id'))?($errors->first('brand_id')):''}}</font>
@@ -68,7 +68,7 @@
                           <label for="color_id">Color</label>
                           <select class="custom-select form-control-border select2" name="color_id[]" id="color_id" multiple>
                             @foreach ($colors as $color)
-                              <option value="{{$color->id}}">{{$color->name}}</option>  
+                              <option value="{{$color->id}}" {{@in_array(['color_id'=>$color->id], $color_array)?"selected":""}}>{{$color->name}}</option>  
                             @endforeach
                           </select>
                           <font style="color: red">{{($errors->has('color_id'))?($errors->first('color_id')):''}}</font>
@@ -77,7 +77,7 @@
                           <label for="size_id">Size</label>
                           <select class="custom-select form-control-border select2" name="size_id[]" id="size_id" multiple>
                             @foreach ($sizes as $size)
-                              <option value="{{$size->id}}">{{$size->name}}</option>  
+                              <option value="{{$size->id}}" {{@in_array(['size_id'=>$size->id], $size_array)?'selected':''}}>{{$size->name}}</option>  
                             @endforeach
                           </select>
                           <font style="color: red">{{($errors->has('size_id'))?($errors->first('size_id')):''}}</font>
@@ -103,7 +103,7 @@
                           <font style="color: red">{{($errors->has('image'))?($errors->first('image')):''}}</font>
                         </div>
                         <div class="form-group">
-                          <img id="showImage" src="{{(!empty($editData->image))?url('upload/info_images/'.$editData->image):url('backend/img/no-image.png')}}" height="150px" width="150px" style="border: solid 2px black" alt="">
+                          <img id="showImage" src="{{(!empty($editData->image))?url('upload/product_images/'.$editData->image):url('backend/img/no-image.png')}}" height="150px" width="150px" style="border: solid 2px black" alt="">
                         </div>
                         <div class="form-group">
                           <label for="sub_image">Upload Sub Image</label>

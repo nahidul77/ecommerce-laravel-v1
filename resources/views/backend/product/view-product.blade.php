@@ -49,8 +49,8 @@
                         @foreach($products as $key => $product)
                             <tr class="{{$product->id}}">
                                 <td>{{$key+1}}</td>
-                                <td>{{$product->category_id}}</td>
-                                <td>{{$product->brand_id}}</td>
+                                <td>{{$product->category->name}}</td>
+                                <td>{{$product->brand->name}}</td>
                                 <td>{{$product->name}}</td>
                                 <td>{{$product->price}}</td>
                                 <td><img id="showImage" src="{{(!empty($product->image))?url('upload/product_images/'.$product->image):url('backend/img/no-image.png')}}" height="50px" width="50px" alt=""></td>
