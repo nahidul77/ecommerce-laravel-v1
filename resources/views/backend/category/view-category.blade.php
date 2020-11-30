@@ -43,12 +43,17 @@
                         </thead>
                         <tbody>
                         @foreach($categories as $key => $category)
+                          @php
+                              $count_category = App\Model\Product::where('category_id', $category->id)->count();
+                          @endphp
                             <tr class="{{$category->id}}">
                                 <td>{{$key+1}}</td>
                                 <td>{{$category->name}}</td>
                                 <td>
                                     <a title="Edit" class="btn btn-primary btn-sm" href="{{route('categories.edit', $category->id)}}"><i class="fa fa-edit"></i></a>
+                                    @if($count_category<1)
                                     <a id="delete" title="Delete" data-token="{{csrf_token()}}" data-id="{{$category->id}}" class="btn btn-danger btn-sm" href="{{route('categories.delete', $category->id)}}"><i class="fa fa-trash"></i></a>
+                                    @endif
                                 </td>
                             </tr>
                         @endforeach

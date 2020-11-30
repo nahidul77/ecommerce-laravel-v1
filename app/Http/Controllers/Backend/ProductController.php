@@ -14,6 +14,7 @@ use App\Model\ProductSize;
 use App\Model\ProductSubImage;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Str;
 
 class ProductController extends Controller
 {
@@ -43,6 +44,7 @@ class ProductController extends Controller
             $product->category_id = $request->category_id;
             $product->brand_id = $request->brand_id;
             $product->name = $request->name;
+            $product->slug = Str::slug($request->name, '-');
             $product->short_desc = $request->short_desc;
             $product->long_desc = $request->long_desc;
             $product->long_desc = $request->long_desc;
@@ -111,6 +113,7 @@ class ProductController extends Controller
             $product->category_id = $request->category_id;
             $product->brand_id = $request->brand_id;
             $product->name = $request->name;
+            $product->slug = Str::slug($request->name, '-');
             $product->short_desc = $request->short_desc;
             $product->long_desc = $request->long_desc;
             $product->long_desc = $request->long_desc;
@@ -196,5 +199,13 @@ class ProductController extends Controller
         $product->delete();
         return redirect()->route('products.view')->with('success', 'product deleted successfully');
 
+    }
+
+    public function details($id){
+        $product = Product::find($id);
+        $colors = ProductColor::where('product_id', $id)->get();
+        $sizes = ProductSize::where('product_id', $id)->get();
+        $subImages = ProductSubImage::where('product_id', $id)->get();
+        return view('backend.product.details-product', compact('product', 'colors', 'sizes', 'subImages'));
     }
 }

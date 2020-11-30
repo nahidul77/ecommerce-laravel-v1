@@ -42,7 +42,7 @@
                           <th>Product Name</th>
                           <th>Price</th>
                           <th>Image</th>
-                          <th width="10%">Action</th>
+                          <th width="15%">Action</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -56,6 +56,7 @@
                                 <td><img id="showImage" src="{{(!empty($product->image))?url('upload/product_images/'.$product->image):url('backend/img/no-image.png')}}" height="50px" width="50px" alt=""></td>
                                 <td>
                                     <a title="Edit" class="btn btn-primary btn-sm" href="{{route('products.edit', $product->id)}}"><i class="fa fa-edit"></i></a>
+                                    <a title="Details" class="btn btn-success btn-sm" href="{{route('products.details', $product->id)}}"><i class="fa fa-eye"></i></a>
                                     <a id="delete" title="Delete" data-token="{{csrf_token()}}" data-id="{{$product->id}}" class="btn btn-danger btn-sm" href="{{route('products.delete', $product->id)}}"><i class="fa fa-trash"></i></a>
                                 </td>
                             </tr>
@@ -69,7 +70,7 @@
                           <th>Product Name</th>
                           <th>Price</th>
                           <th>Image</th>
-                          <th width="10%">Action</th>
+                          <th width="15%">Action</th>
                         </tr>
                         </tfoot>
                       </table>

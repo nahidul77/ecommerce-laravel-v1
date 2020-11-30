@@ -43,12 +43,17 @@
                         </thead>
                         <tbody>
                         @foreach($colors as $key => $color)
+                          @php
+                              $count_color = App\Model\ProductColor::where('color_id', $color->id)->count();
+                          @endphp
                             <tr class="{{$color->id}}">
                                 <td>{{$key+1}}</td>
                                 <td>{{$color->name}}</td>
                                 <td>
                                     <a title="Edit" class="btn btn-primary btn-sm" href="{{route('colors.edit', $color->id)}}"><i class="fa fa-edit"></i></a>
+                                    @if($count_color<1)
                                     <a id="delete" title="Delete" data-token="{{csrf_token()}}" data-id="{{$color->id}}" class="btn btn-danger btn-sm" href="{{route('colors.delete', $color->id)}}"><i class="fa fa-trash"></i></a>
+                                    @endif
                                 </td>
                             </tr>
                         @endforeach
