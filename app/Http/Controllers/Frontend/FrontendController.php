@@ -13,7 +13,10 @@ use Illuminate\Support\Facades\Mail;
 class FrontendController extends Controller
 { 
     public function home(){
-        return view('frontend.single-pages.home');
+        $data['logo'] = Logo::first();
+        $data['sliders'] = Slider::all();
+        $data['contact'] = Contact::first();
+        return view('frontend.single-pages.home', $data);
     }
 
     public function shoppingCart(){

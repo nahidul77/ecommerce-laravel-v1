@@ -45,6 +45,7 @@ class SliderController extends Controller
         $slider->updated_by = Auth::user()->id;
         if($request->has('image')){
             $file = $request->file('image');
+            @unlink(public_path('upload/slider_images/'.$slider->image));
             $fileName = date('YmdHi').$file->getClientOriginalName();
             $file->move(public_path('upload/slider_images'), $fileName);
             $slider->image = $fileName;
