@@ -9,9 +9,9 @@
 		<div class="flex-w flex-sb-m p-b-52">
 			<div class="flex-w flex-l-m filter-tope-group m-tb-10">
 				
-				<a class="stext-106 cl6 hov1 bor3 trans-04 m-r-32 m-tb-5 how-active1" href="">All Products</a>
+				<a class="stext-106 cl6 hov1 bor3 trans-04 m-r-32 m-tb-5 how-active1" href="{{route('products.list')}}">All Products</a>
 				@foreach ($categories as $category)
-					<a class="stext-106 cl6 hov1 bor3 trans-04 m-r-32 m-tb-5" href="">{{$category['category']['name']}}</a>
+					<a class="stext-106 cl6 hov1 bor3 trans-04 m-r-32 m-tb-5" href="{{route('category.wise.product', $category->category_id)}}">{{$category['category']['name']}}</a>
 				@endforeach
 			</div>
 
@@ -49,7 +49,7 @@
 						</div>
 						<div style="padding: 0px 20px 20px 20px;">
 							@foreach($brands as $brand)
-							<a class="stext-106 cl6 hov1 bor3 trans-04 m-r-32 m-tb-5" href="" class="filter-link stext-106 trans-04" style="color: #fff">
+							<a class="stext-106 cl6 hov1 bor3 trans-04 m-r-32 m-tb-5" href="{{route('brand.wise.product', $brand->brand_id)}}" class="filter-link stext-106 trans-04" style="color: #fff">
 								{{$brand['brand']['name']}}
 							</a>
 							@endforeach
