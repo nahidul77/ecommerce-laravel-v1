@@ -47,7 +47,6 @@ class ProductController extends Controller
             $product->slug = Str::slug($request->name, '-');
             $product->short_desc = $request->short_desc;
             $product->long_desc = $request->long_desc;
-            $product->long_desc = $request->long_desc;
             $product->price = $request->price;
             $img = $request->file('image');
             if($img){
@@ -115,7 +114,6 @@ class ProductController extends Controller
             $product->name = $request->name;
             $product->slug = Str::slug($request->name, '-');
             $product->short_desc = $request->short_desc;
-            $product->long_desc = $request->long_desc;
             $product->long_desc = $request->long_desc;
             $product->price = $request->price;
             $img = $request->file('image');

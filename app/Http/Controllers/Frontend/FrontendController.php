@@ -7,6 +7,9 @@ use Illuminate\Http\Request;
 use App\Model\Logo;
 use App\Model\Slider;
 use App\Model\Product;
+use App\Model\ProductSubImage;
+use App\Model\ProductSize;
+use App\Model\ProductColor;
 use App\Model\Info;
 use App\Model\Contact;
 use App\Model\communicate;
@@ -47,6 +50,16 @@ class FrontendController extends Controller
         $data['brands'] = Product::select('brand_id')->groupBy('brand_id')->get();
         $data['products'] = Product::where('brand_id', $id)->orderBy('id', 'desc')->get();
         return view('frontend.single-pages.brand-wise-product', $data);
+    }
+
+    public function productDetails($slug){
+        $data['logo'] = Logo::first();
+        $data['contact'] = Contact::first();
+        $data['product'] = Product::where('slug', $slug)->first();
+        $data['productImages'] = ProductSubImage::where('product_id', $data['product']->id)->get();
+        $data['productSizes'] = ProductSize::where('product_id', $data['product']->id)->get();
+        $data['productColors'] = ProductColor::where('product_id', $data['product']->id)->get();
+        return view('frontend.single-pages.product-details', $data);
     }
 
     public function shoppingCart(){

@@ -20,8 +20,9 @@ Route::get('/about', 'Frontend\FrontendController@about')->name('about');
 Route::get('/contact', 'Frontend\FrontendController@contact')->name('contact');
 Route::post('/contact/store', 'Frontend\FrontendController@store')->name('contact.store');
 Route::get('/product-list', 'Frontend\FrontendController@productList')->name('products.list');
-Route::get('category-product/{id}', 'Frontend\FrontendController@categoryWiseProduct')->name('category.wise.product');
-Route::get('brand-product/{id}', 'Frontend\FrontendController@brandWiseProduct')->name('brand.wise.product');
+Route::get('/category-product/{id}', 'Frontend\FrontendController@categoryWiseProduct')->name('category.wise.product');
+Route::get('/brand-product/{id}', 'Frontend\FrontendController@brandWiseProduct')->name('brand.wise.product');
+Route::get('/product-details/{slug}', 'Frontend\FrontendController@ProductDetails')->name('product.details.info');
 
 Auth::routes();
 

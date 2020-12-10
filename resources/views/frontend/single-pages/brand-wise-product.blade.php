@@ -3,7 +3,7 @@
     <!-- Title page -->
 	<section class="bg-img1 txt-center p-lr-15 p-tb-92" style="background-image: url('{{asset('/')}}/frontend/images/header/breadcrumb.jpg');">
 		<h2 class="ltext-105 cl0 txt-center">
-			Brand Products
+			Brand Wise Products
 		</h2>
 	</section>
 	<section class="bg0 p-t-23 p-b-140">
@@ -69,7 +69,7 @@
 						<div class="block2-pic hov-img0">
 							<img src="{{url('upload/product_images/'.$product->image)}}" alt="IMG-PRODUCT">
 	
-							<a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
+							<a href="{{route('product.details.info', $product->slug)}}" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04">
 								Add to Card
 							</a>
 						</div>
