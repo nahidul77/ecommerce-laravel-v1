@@ -62,8 +62,8 @@
 												<option value="{{$sz->size_id}}">{{$sz['size']['name']}}</option> 
 												@endforeach
 											</select>
-											<font style="color:red;">{{$errors->has('size_id')?$errors->first('size_id'):''}}</font>
 											<div class="dropDownSelect2"></div>
+											<font style="color:red;">{{$errors->has('size_id')?$errors->first('size_id'):''}}</font>
 										</div>
 									</div>
 								</div>
@@ -79,8 +79,8 @@
 												<option value="{{$clr->color_id}}">{{$clr['color']['name']}}</option> 
 												@endforeach
 											</select>
-											<font style="color:red;">{{$errors->has('color_id')?$errors->first('color_id'):''}}</font>
 											<div class="dropDownSelect2"></div>
+											<font style="color:red;">{{$errors->has('color_id')?$errors->first('color_id'):''}}</font>
 										</div>
 									</div>
 								</div>

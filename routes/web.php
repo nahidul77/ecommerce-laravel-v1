@@ -26,6 +26,8 @@ Route::get('/product-details/{slug}', 'Frontend\FrontendController@ProductDetail
 //shopping cart
 Route::post('/add-to-cart', 'Frontend\CartController@addToCart')->name('insert.cart');
 Route::get('/show-cart', 'Frontend\CartController@showCart')->name('show.cart');
+Route::post('/update-cart', 'Frontend\CartController@updateCart')->name('update.cart');
+Route::get('/delete-cart/{rowId}', 'Frontend\CartController@deleteCart')->name('delete.cart');
 
 Auth::routes();
 
