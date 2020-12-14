@@ -28,6 +28,9 @@ Route::post('/add-to-cart', 'Frontend\CartController@addToCart')->name('insert.c
 Route::get('/show-cart', 'Frontend\CartController@showCart')->name('show.cart');
 Route::post('/update-cart', 'Frontend\CartController@updateCart')->name('update.cart');
 Route::get('/delete-cart/{rowId}', 'Frontend\CartController@deleteCart')->name('delete.cart');
+//checkout
+Route::get('/customer-login', 'Frontend\CheckoutController@customerLogin')->name('customer.login');
+Route::get('/customer-signup', 'Frontend\CheckoutController@customerSignup')->name('customer.signup');
 
 Auth::routes();
 
