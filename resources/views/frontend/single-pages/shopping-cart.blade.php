@@ -21,16 +21,16 @@
 			<div class="row">
 				<div class="col-md-12 col-lg-12 col-xl-12" style="padding-bottom: 30px;">
 					<div class="wrap-table-shopping-cart">
-						<table class="table-shopping-cart">
+						<table class="table table-bordered">
 							<tr class="table_head">
-								<th class="column-1">Product</th>
-								<th class="column-1"></th>
-								<th class="column-1">Size</th>
-								<th class="column-1">Color</th>
-								<th class="column-1">Price</th>
-								<th class="column-3">Quantity</th>
-								<th class="column-5">Total</th>
-								<th class="column-5">Action</th>
+								<th>Image</th>
+								<th>Product</th>
+								<th>Size</th>
+								<th>Color</th>
+								<th>Price</th>
+								<th>Quantity</th>
+								<th>Total</th>
+								<th>Action</th>
 							</tr>
 							@php
 								$contents = Cart::content();
@@ -38,16 +38,16 @@
 							@endphp
 							@foreach($contents as $content)
 							<tr class="table_row">
-								<td class="column-1">
+								<td>
 									<div class="how-itemcart1">
 										<img src="{{url('upload/product_images/'.$content->options->image)}}" alt="IMG">
 									</div>
 								</td>
-								<td class="column-1">{{$content->name}}</td>
-								<td class="column-1">{{$content->options->size_name}}</td>
-								<td class="column-1">{{$content->options->color_name}}</td>
-								<td class="column-1">{{$content->price}} TK</td>
-								<td class="column-3">
+								<td>{{$content->name}}</td>
+								<td>{{$content->options->size_name}}</td>
+								<td></td>{{$content->options->color_name}}</td>
+								<td>{{$content->price}} TK</td>
+								<td style="width: 150px; min-width: 150px;">
 									<div>
 									<form action="{{route('update.cart')}}" method="POST">
 										@csrf
@@ -57,8 +57,8 @@
 									</form>
 									</div>
 								</td>
-								<td class="column-5">{{$content->subtotal}} TK</td>
-								<td class="column-5">
+								<td>{{$content->subtotal}} TK</td>
+								<td>
 									<a class="cart_quantity_delete btn btn-danger" href="{{route('delete.cart', $content->rowId)}}"><i class="fa fa-times"></i></a>
 								</td>
 							</tr>
