@@ -80,6 +80,9 @@
 	</script>
 	<script src="{{asset('/frontend/')}}/vendor/isotope/isotope.pkgd.min.js"></script>
 	<script src="{{asset('/frontend/')}}/vendor/sweetalert/sweetalert.min.js"></script>
+	<!-- jquery-validation -->
+	<script src="{{asset('/')}}backend/plugins/jquery-validation/jquery.validate.min.js"></script>
+	<script src="{{asset('/')}}backend/plugins/jquery-validation/additional-methods.min.js"></script>
 	<script>
 		$('.js-addwish-b2').on('click', function(e){
 			e.preventDefault();

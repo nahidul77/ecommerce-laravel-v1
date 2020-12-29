@@ -12,9 +12,9 @@
     #login .container #login-row #login-column #login-box #login-form {
     padding: 20px;
     }
-    #login .container #login-row #login-column #login-box #login-form #register-link {
+    /* #login .container #login-row #login-column #login-box #login-form #register-link {
     margin-top: -40px;
-    }
+    } */
 </style>
     <!-- Title page -->
 	<section class="bg-img1 txt-center p-lr-15 p-tb-92" style="background-image: url('{{asset('/')}}/frontend/images/header/breadcrumb.jpg');">
