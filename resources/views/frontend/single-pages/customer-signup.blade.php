@@ -66,7 +66,7 @@
             </div>
         </div>
 
-        {{-- <script>
+        <script>
             $(function () {
               $('#signup-form').validate({
                 rules: {
@@ -122,5 +122,5 @@
                 }
               });
             });
-          </script> --}}
+          </script>
 @endsection
